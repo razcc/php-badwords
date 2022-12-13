@@ -1,11 +1,5 @@
 <?php
-$paragrafo = 'Nel mezzo del cammin di nostra vita
-mi ritrovai per una selva oscura,
-ché la diritta via era smarrita.
-
-Ahi quanto a dir qual era è cosa dura
-esta selva selvaggia e aspra e forte
-che nel pensier rinova la paura!';
+$paragrafo = 'Nel mezzo';
 
 
 ?>
@@ -44,7 +38,7 @@ che nel pensier rinova la paura!';
 
     <!-- Input -->
     <form name="form" method="get">
-        <input type="text" name="subject" id="subject" value="">
+        <input type="text" name="subject" id="subject" placeholder="parola da censurare">
     </form>
 
     <?php $variabileUtente = $_GET['subject'];
@@ -55,8 +49,15 @@ che nel pensier rinova la paura!';
     <!-- tampa nuovo paragrafo con censura dell'utente -->
     <div>
         <?php
-        echo str_replace($variabileUtente, '***', $paragrafo);
+        $paragrafoCensurato = str_replace($variabileUtente, '***', $paragrafo);
+        echo ($paragrafoCensurato);
         ?>
+
+        <pre>
+            <?php
+            echo var_dump($paragrafoCensurato);
+            ?>
+        </pre>
     </div>
 </body>
 
