@@ -1,8 +1,19 @@
 <?php
 $paragrafo = 'Nel mezzo';
 
+// Lunghezza stringa
+$varLunghezza = strlen($paragrafo);
 
+// !Scelta parola utente tramite input
+// $variabileUtente = $_GET['subject'];
+
+// Paragrafo Censurato con il replace
+$paragrafoCensurato = str_replace($_GET['censura'], '***', $paragrafo);
+
+$varNuovaLunghezza = strlen($paragrafoCensurato);
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,43 +30,38 @@ $paragrafo = 'Nel mezzo';
         <p>
             <?php
             echo ($paragrafo);
-
             ?>
         </p>
 
-    </div>
-
-    <!-- Stampa Lunghezza -->
-    <div>
+        <!-- Stampa Lunghezza -->
         <pre>
             <?php
-            var_dump($paragrafo);
-
-            ?>
-
+            echo ($varLunghezza);
+            ?>          
         </pre>
     </div>
 
-    <!-- Input -->
-    <form name="form" method="get">
-        <input type="text" name="subject" id="subject" placeholder="parola da censurare">
-    </form>
 
-    <?php $variabileUtente = $_GET['subject'];
-    echo ($variabileUtente);
-    ?>
+
+
+
+    <!-- Input -->
+    <!-- <form name="form" method="get">
+        <input type="text" name="subject" id="subject" placeholder="parola da censurare">
+    </form> -->
+
+
 
 
     <!-- tampa nuovo paragrafo con censura dell'utente -->
     <div>
         <?php
-        $paragrafoCensurato = str_replace($variabileUtente, '***', $paragrafo);
         echo ($paragrafoCensurato);
         ?>
 
         <pre>
             <?php
-            echo var_dump($paragrafoCensurato);
+            echo ($varNuovaLunghezza);
             ?>
         </pre>
     </div>
