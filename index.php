@@ -8,7 +8,6 @@ esta selva selvaggia e aspra e forte
 che nel pensier rinova la paura!';
 
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,25 +20,35 @@ che nel pensier rinova la paura!';
 </head>
 
 <body>
+    <!-- Paragrafo -->
     <div>
-        <h3>
+        <p>
             <?php
             echo ($paragrafo);
 
             ?>
-        </h3>
-
-    </div>
-
-    <div>
-        <p>
-            <?php
-        var_dump($paragrafo);
-
-        ?>
-
         </p>
+
     </div>
+
+    <!-- Stampa Lunghezza -->
+    <div>
+        <pre>
+            <?php
+            var_dump($paragrafo);
+
+            ?>
+
+        </pre>
+    </div>
+
+    <!-- Input -->
+    <form name="form" method="get">
+        <input type="text" name="subject" id="subject" value="">
+    </form>
+
+    <?php $variabileUtente = $_GET['subject'];
+    echo ($variabileUtente) ?>
 </body>
 
 </html>
