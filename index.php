@@ -48,7 +48,16 @@ che nel pensier rinova la paura!';
     </form>
 
     <?php $variabileUtente = $_GET['subject'];
-    echo ($variabileUtente) ?>
+    echo ($variabileUtente);
+    ?>
+
+
+    <!-- tampa nuovo paragrafo con censura dell'utente -->
+    <div>
+        <?php
+        echo str_replace($variabileUtente, '***', $paragrafo);
+        ?>
+    </div>
 </body>
 
 </html>
